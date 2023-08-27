@@ -1,0 +1,97 @@
+@use '../abstracts/mixins' as *;
+@use '../abstracts/variables' as *;
+
+.article {
+    background-color: $color-base-terietry;
+
+    @include SM-styles {
+        padding-top: 4.7rem;
+        padding-bottom: 3.5rem;
+    }
+
+    &:nth-of-type(2) {
+        background-color: transparent;
+        margin: 12rem 0 7rem;
+
+        .articles__inner {
+            flex-direction: row-reverse;
+
+            .article__text-box {
+                margin-left: 9rem;
+                margin-right: 0;
+
+                @include MD-styles {
+                    margin-left: 0;
+                }
+            }
+
+            @include MD-styles {
+                flex-direction: column-reverse;
+                text-align: center;
+                width: 70%;
+                margin: 0 auto;
+
+                .article__img-box {
+                    margin-bottom: 4.625rem;
+                }
+            }
+
+            @include SM-styles {
+                width: 100%;
+            }
+        }
+
+        @include SM-styles {
+            margin: 4.2rem 0;
+        }
+    }
+
+    .articles__inner {
+        @extend %wrap-base;
+        display: flex;
+        align-items: center;
+
+        @include MD-styles {
+            flex-direction: column-reverse;
+            text-align: center;
+            width: 60%;
+            margin: 0 auto;
+        }
+
+        @include SM-styles {
+            width: 90%;
+        }
+    }
+}
+
+.article__text-box {
+    flex: 1;
+    margin-right: 9rem;
+
+    @include MD-styles {
+        margin-right: 0;
+    }
+
+    h2 {
+        margin-bottom: 1.625rem;
+    }
+
+    p {
+        font-size: $font-size-base;
+        line-height: 24px;
+    }
+}
+
+.article__img-box {
+    flex-basis: 43.8%;
+    flex-shrink: 0;
+
+    @include MD-styles {
+        flex-basis: 100%;
+        margin-bottom: 4.625rem;
+    }
+
+    @include SM-styles {
+        width: 70%;
+    }
+}

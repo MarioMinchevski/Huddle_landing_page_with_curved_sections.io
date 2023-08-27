@@ -1,0 +1,23 @@
+@use '../abstracts/mixins' as *;
+@use '../abstracts/variables' as *;
+
+.community {
+    padding: 10rem 2.5% 11.563rem;
+    text-align: center;
+    margin: 0 auto;
+
+    @include SM-styles {
+        padding: 4.5rem 2.5% 16rem;
+    }
+
+    .community__text-box {
+        h2 {
+            margin-bottom: 2.625rem;
+
+            @include SM-styles {
+                font-size: $font-size-headidng-medium;
+                line-height: 24px;
+            }
+        }
+    }
+}
